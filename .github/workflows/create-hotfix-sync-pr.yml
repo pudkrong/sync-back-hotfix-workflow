@@ -1,0 +1,44 @@
+name: Create Hotfix Sync-Back PR
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  sync-back:
+    if: >
+      github.event.pull_request.merged == true &&
+      (github.event.pull_request.base.ref == 'staging' || github.event.pull_request.base.ref == 'production')
+
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: hotfix-sync-back-${{ github.event.pull_request.number }}
+      cancel-in-progress: false
+
+    env:
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run sync-back script
+        shell: bash
+        run: |
+          bash scripts/sync-back.sh \
+            --source-branch "${{ github.event.pull_request.head.ref }}" \
+            --source-base "${{ github.event.pull_request.base.ref }}" \
+            --pr-number "${{ github.event.pull_request.number }}" \
+            --pr-title "${{ github.event.pull_request.title }}" \
+            --pr-url "${{ github.event.pull_request.html_url }}" \
+            --repo "${{ github.repository }}" \
+            --ntfy-url "${{ vars.NTFY_URL }}"
