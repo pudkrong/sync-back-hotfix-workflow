@@ -303,7 +303,6 @@ jobs:
         if: steps.cherry-pick.outputs.should_create_pr == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GH_PAT }}
           commit-message: ${{ steps.cherry-pick.outputs.commit_message }}
           branch: ${{ steps.cherry-pick.outputs.sync_branch }}
           base: ${{ steps.cherry-pick.outputs.target_branch }}
