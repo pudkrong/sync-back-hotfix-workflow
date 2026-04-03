@@ -299,11 +299,9 @@ CREATED_PR_URL="$(gh pr create \
 echo "Sync-back PR created: $CREATED_PR_URL"
 
 # ── Notify via ntfy ──────────────────────────────────────────────────────────
-BRANCH_URL="${GITHUB_SERVER_URL:-https://github.com}/$REPO/tree/$SYNC_BRANCH"
-
 send_ntfy \
   "[sync-back] PR created" \
-  "$SYNC_PR_TITLE"$'\n'"Route: $SOURCE_BASE -> $TARGET_BRANCH"$'\n'"$BRANCH_URL" \
+  "$SYNC_PR_TITLE"$'\n'"Route: $SOURCE_BASE -> $TARGET_BRANCH"$'\n' \
   "default" \
   "white_check_mark" \
   "view, View Sync Branch, $CREATED_PR_URL"
