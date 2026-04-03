@@ -6,5 +6,9 @@ Bugfix 1 on staging
 Bugfix 2 on staging
 Bugfix 1 on staging
 Bugfix 2 on staging
+<<<<<<< HEAD
 Bugfix 1 on staging
 Bugfix 2 on staging
+=======
+Bugfix 1 on production
+>>>>>>> 4d68d51 (fix: bugfix 1 on production)
