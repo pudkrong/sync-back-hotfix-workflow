@@ -1,2 +1,4 @@
 Bugfix 1 on staging
 Bugfix 2 on staging
+Bugfix 1 on staging
+Bugfix 2 on staging
