@@ -264,8 +264,7 @@ SYNC_PR_TITLE="[sync-back][$SOURCE_BASE->$TARGET_BRANCH] $PR_TITLE (#$PR_NUMBER)
   echo
   echo "This PR was generated automatically after #$PR_NUMBER was merged into \`$SOURCE_BASE\`."
   echo
-  echo "- Original PR: #$PR_NUMBER"
-  echo "- Original PR URL: $PR_URL"
+  echo "- Original PR: $PR_URL"
   echo "- Original source branch: \`$SOURCE_BRANCH\`"
   echo "- Sync route: \`$SOURCE_BASE\` -> \`$TARGET_BRANCH\`"
   echo "- Cherry-picked commits applied here: $applied_commits"
@@ -295,9 +294,7 @@ CREATED_PR_URL="$(gh pr create \
   --base "$TARGET_BRANCH" \
   --title "$SYNC_PR_TITLE" \
   --body-file "$BODY_FILE" \
-  --label "$LABELS" \
-  --json url \
-  --jq '.url')"
+  --label "$LABELS")"
 
 echo "Sync-back PR created: $CREATED_PR_URL"
 

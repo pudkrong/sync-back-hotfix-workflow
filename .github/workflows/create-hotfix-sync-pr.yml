@@ -41,4 +41,4 @@ jobs:
             --pr-title "${{ github.event.pull_request.title }}" \
             --pr-url "${{ github.event.pull_request.html_url }}" \
             --repo "${{ github.repository }}" \
-            --ntfy-url "${{ secrets.NTFY_URL }}"
+            --ntfy-url "${{ vars.NTFY_URL }}"
