@@ -11,4 +11,8 @@ Bugfix 1 on staging
 Bugfix 2 on staging
 =======
 Bugfix 1 on production
+<<<<<<< HEAD
 >>>>>>> 4d68d51 (fix: bugfix 1 on production)
+=======
+Bugfix 2 on production
+>>>>>>> 015f3e8 (fix: bugfix 2 on production)
