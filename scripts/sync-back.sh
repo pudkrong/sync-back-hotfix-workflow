@@ -303,9 +303,9 @@ BRANCH_URL="${GITHUB_SERVER_URL:-https://github.com}/$REPO/tree/$SYNC_BRANCH"
 
 send_ntfy \
   "[sync-back] PR created" \
-  "$SYNC_PR_TITLE"$'\n'"Route: $SOURCE_BASE -> $TARGET_BRANCH"$'\n'"$CREATED_PR_URL" \
+  "$SYNC_PR_TITLE"$'\n'"Route: $SOURCE_BASE -> $TARGET_BRANCH"$'\n'"$BRANCH_URL" \
   "default" \
   "white_check_mark" \
-  "view, View Sync Branch, $BRANCH_URL"
+  "view, View Sync Branch, $CREATED_PR_URL"
 
 echo "Done."
