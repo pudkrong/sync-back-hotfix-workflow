@@ -294,8 +294,7 @@ CREATED_PR_URL="$(gh pr create \
   --base "$TARGET_BRANCH" \
   --title "$SYNC_PR_TITLE" \
   --body-file "$BODY_FILE" \
-  --label "$LABELS" \
-  --jq '.url')"
+  --label "$LABELS")"
 
 echo "Sync-back PR created: $CREATED_PR_URL"
 
