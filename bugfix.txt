@@ -16,3 +16,4 @@ Bugfix 1 on production
 =======
 Bugfix 2 on production
 >>>>>>> 015f3e8 (fix: bugfix 2 on production)
+Bugfix 1 on staging
